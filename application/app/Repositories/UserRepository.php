@@ -8,7 +8,9 @@ use App\Interfaces\UserRepositoryInterface;
 
 class UserRepository implements UserRepositoryInterface
 {
-    protected $model = User::class;
+    public function __construct(private User $model)
+    {
+    }
 
     public function create(array $data)
     {
@@ -31,6 +33,6 @@ class UserRepository implements UserRepositoryInterface
     {
         return $this->model->find($id);
     }
-    
+
 
 }

@@ -13,17 +13,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if(app()->isProduction()) {
-            $this->app->singleton(
+        match(app()->environment()) {
+            'production' => $this->app->singleton(
                 UserRepositoryInterface::class,
                 UserRepository::class
-            );
-        }else{
-            $this->app->singleton(
+            ),
+            'local' => $this->app->singleton(
                 UserRepositoryInterface::class,
                 UserRepository::class
-            );
-        }
+            ),
+        };
     }
 
     /**
