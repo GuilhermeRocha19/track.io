@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index() : View
@@ -15,7 +15,10 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        dd($credentials);
+        if (Auth::attempt($credentials)) {
+            return dd(auth()->user());
+        }
+        return redirect()->route('login')->with('error', 'Credenciais inválidas');
     }
     
 }
