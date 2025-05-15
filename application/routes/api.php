@@ -10,4 +10,8 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/login/store', [LoginController::class, 'login'])->name('login.store');
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('/logout/store', [LoginController::class, 'logout'])->name('login.logout');
+});
+
 Route::post('/register/store', [RegisterController::class, 'store'])->name('register.store');

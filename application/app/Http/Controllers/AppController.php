@@ -8,6 +8,8 @@ class AppController extends Controller
 {
     public function home(): View
     {
-        return view('app.index');
+        dd(auth()->user());
+
+        return view('app.home');
     }
 }
