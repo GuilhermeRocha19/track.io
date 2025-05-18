@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
-use App\Interfaces\UserRepositoryInterface;
+
 use App\Http\Requests\RegisterRequest;
+use App\Repositories\UserRepository;
 
 class RegisterController extends Controller
 {
     public function __construct(
-        private UserRepositoryInterface $userRepository
-    ): void 
+        private UserRepository $userRepository
+    )
     {}
 
     public function index(): View

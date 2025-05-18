@@ -8,7 +8,7 @@ class AppController extends Controller
 {
     public function home(): View
     {
-        dd(auth()->user());
+        // dd();
 
         return view('app.home');
     }

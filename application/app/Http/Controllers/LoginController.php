@@ -18,10 +18,11 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate(); // ESSENCIAL
+            $request->session()->regenerate();
 
             return redirect()->route('app.home');
         }
+
         return redirect()->route('login')->with('error', 'Credenciais inválidas');
     }
 

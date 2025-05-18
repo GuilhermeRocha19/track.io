@@ -20,7 +20,7 @@
         </div>
     </nav>
     <main class="flex flex-col items-center justify-center flex-1 py-20">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Bem-vindo ao <span class="text-indigo-600">TruckIO</span></h1>
+        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Bem-vindo {{ Auth::user()->name }} <span class="text-indigo-600">TruckIO</span></h1>
         <p class="text-lg text-gray-600 mb-8 text-center max-w-xl">
             Gerencie sua frota de caminhões de forma simples, rápida e eficiente. Controle viagens, motoristas e muito mais em um só lugar.
         </p>
