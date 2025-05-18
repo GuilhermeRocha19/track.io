@@ -12,10 +12,11 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <span class="text-2xl font-bold text-indigo-600">TruckIO</span>
             <div>
-                <a href="#" class="text-gray-700 hover:text-indigo-600 mx-2">Início</a>
-                <a href="#" class="text-gray-700 hover:text-indigo-600 mx-2">Sobre</a>
-                <a href="#" class="text-gray-700 hover:text-indigo-600 mx-2">Contato</a>
-                <a href="{{ route('login.logout') }}" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 ml-4">Sair</a>
+                <a href="#" class="text-gray-700 hover:text-indigo-600 mx-2">Novo Lembrete</a>
+                <form action="{{ route('login.logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 ml-4">Sair</button>
+                </form>
             </div>
         </div>
     </nav>

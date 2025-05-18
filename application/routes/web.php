@@ -18,8 +18,5 @@ Route::post('/login/store', [LoginController::class, 'login'])->name('login.stor
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', [AppController::class, 'home'])->name('app.home');
-});
-
-Route::get('/csrf-token', function () {
-    return response()->json(['csrf_token' => csrf_token()]);
+    Route::post('/logout/store', [LoginController::class, 'logout'])->name('login.logout');
 });
