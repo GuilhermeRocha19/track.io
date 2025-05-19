@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('reminders', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->dateTime('date');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }
