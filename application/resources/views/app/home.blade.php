@@ -10,7 +10,7 @@
 <body class="bg-gray-100 min-h-screen">
     <nav class="bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <span class="text-2xl font-bold text-indigo-600">TruckIO</span>
+            <span class="text-2xl font-bold text-indigo-600">TrackIO</span>
             <div>
                 <a href="{{ route('reminders.create') }}" class="text-gray-700 hover:text-indigo-600 mx-2">Novo Lembrete</a>
                 <form action="{{ route('login.logout') }}" method="POST">
@@ -21,7 +21,7 @@
         </div>
     </nav>
     <main class="flex flex-col items-center justify-center flex-1 py-20">
-        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Bem-vindo {{ Auth::user()->name }} <span class="text-indigo-600">TruckIO</span></h1>
+        <h1 class="text-4xl font-bold text-gray-800 mb-4 text-center">Bem-vindo {{ Auth::user()->name }} <span class="text-indigo-600">TrackIO</span></h1>
         <p class="text-lg text-gray-600 mb-8 text-center max-w-xl">
             Gerencie sua frota de caminhões de forma simples, rápida e eficiente. Controle viagens, motoristas e muito mais em um só lugar.
         </p>
@@ -29,7 +29,7 @@
     </main>
     <footer class="bg-white shadow-inner py-4 mt-12">
         <div class="max-w-7xl mx-auto text-center text-gray-500 text-sm">
-            &copy; {{ date('Y') }} TruckIO. Todos os direitos reservados.
+            &copy; {{ date('Y') }} TrackIO. Todos os direitos reservados.
         </div>
     </footer>
 </body>
